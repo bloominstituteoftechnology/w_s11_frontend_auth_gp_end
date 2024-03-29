@@ -7,13 +7,13 @@ const thisShouldBeSecret = 'shh'
 let users = [
   {
     id: 1,
-    username: 'dionne',
-    password: '$2a$04$SobtxiiuQCbc0wtySvK1Teu.kHUeTQGSWfH/NM1BvAqcAHCCk/cuu'
+    username: 'tom',
+    password: '$2a$04$XwS6RmJyjrXvfjwM6aIt8e/hUXtzTNlHIJvVjuPuFoNPbDZNnjL/2' // mypassword
   },
   {
     id: 2,
     username: 'liz',
-    password: '$2a$04$M1jAE8ZafqUtbgfqLFnr3OOZXY3H9MUie4rlek5L.rkTAC7XBXcC6'
+    password: '$2a$04$cJ.bGJHDxc76DqCNt0capusTy4TwheygoiM7pwA4z1/3piI/0jrTm' // 12341234
   }
 ]
 
