@@ -4,17 +4,11 @@ import axios from 'axios'
 
 export default function AuthForm() {
   const navigate = useNavigate()
-  const [isLogin, setIsLogin] = useState(true)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
-  const toggleFormMode = () => {
-    setIsLogin(!isLogin)
-    setError('')
-    setMessage('')
-  }
   const handleUsernameChange = (event) => {
     setUsername(event.target.value)
   }
@@ -27,15 +21,11 @@ export default function AuthForm() {
     setMessage('')
     try {
       const { data } = await axios.post(
-        `/api/auth/${isLogin ? 'login' : 'register'}`,
+        `/api/auth/login`,
         { username, password },
       )
-      if (isLogin) {
-        localStorage.setItem('token', data.token)
-        navigate('/stars')
-      } else {
-        setMessage(data.message)
-      }
+      localStorage.setItem('token', data.token)
+      navigate('/cereals')
     } catch (err) {
       setError(err?.response?.data?.message || 'An error occurred. Please try again.')
     }
@@ -45,11 +35,7 @@ export default function AuthForm() {
     <div className="container">
       <div aria-live="polite">{message}</div>
       <div aria-live="assertive" style={{ color: 'red' }}>{error}</div>
-      <h3>{isLogin ? 'Login' : 'Register'}
-        <button onClick={toggleFormMode}>
-          Switch to {isLogin ? 'Register' : 'Login'}
-        </button>
-      </h3>
+      <h3>Login</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -73,7 +59,7 @@ export default function AuthForm() {
             required
           />
         </div>
-        <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   )
