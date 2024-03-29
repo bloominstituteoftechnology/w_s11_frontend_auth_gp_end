@@ -13,21 +13,21 @@ export default function Cereals() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if (!token) logout()
-  }, [])
-
-  useEffect(() => {
-    const fetchCereals = async () => {
-      try {
-        const response = await axios.get(
-          '/api/cereals',
-          { headers: { Authorization: localStorage.getItem('token') } })
-        setCereals(response.data)
-      } catch (error) {
-        if (error?.response?.status == 401) logout()
+    if (!token) {
+      logout()
+    } else {
+      const fetchCereals = async () => {
+        try {
+          const response = await axios.get(
+            '/api/cereals',
+            { headers: { Authorization: localStorage.getItem('token') } })
+          setCereals(response.data)
+        } catch (error) {
+          if (error?.response?.status == 401) logout()
+        }
       }
+      fetchCereals()
     }
-    fetchCereals()
   }, [])
 
   return (
