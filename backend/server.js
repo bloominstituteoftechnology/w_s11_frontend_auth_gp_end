@@ -16,7 +16,7 @@ server.use(cors())
 
 server.use('/api/auth', authTokenRouter)
 
-server.use('/api/stars', cerealsRouter)
+server.use('/api/cereals', cerealsRouter)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
