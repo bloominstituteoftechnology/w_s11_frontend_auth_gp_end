@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
-const starsRouter = require('./stars/router')
+const cerealsRouter = require('./cereals/router')
 const authTokenRouter = require('./auth/tokenRouter')
 
 const PORT = process.env.PORT || 9009
@@ -16,7 +16,7 @@ server.use(cors())
 
 server.use('/api/auth', authTokenRouter)
 
-server.use('/api/stars', starsRouter)
+server.use('/api/stars', cerealsRouter)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
