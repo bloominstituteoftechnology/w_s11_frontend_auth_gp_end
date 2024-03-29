@@ -1,4 +1,4 @@
-# Front End Auth Guided Project
+# Front End Auth Guided Project Solution
 
 ## ✨ Requirements
 
