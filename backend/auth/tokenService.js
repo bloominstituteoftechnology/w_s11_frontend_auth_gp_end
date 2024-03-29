@@ -7,12 +7,12 @@ const thisShouldBeSecret = 'shh'
 let users = [
   {
     id: 1,
-    username: 'fish',
+    username: 'dionne',
     password: '$2a$04$SobtxiiuQCbc0wtySvK1Teu.kHUeTQGSWfH/NM1BvAqcAHCCk/cuu'
   },
   {
     id: 2,
-    username: 'ben',
+    username: 'liz',
     password: '$2a$04$M1jAE8ZafqUtbgfqLFnr3OOZXY3H9MUie4rlek5L.rkTAC7XBXcC6'
   }
 ]
